@@ -114,7 +114,8 @@ type ProductsOptions struct {
 	// Offset specifies the starting position for pagination
 	Offset int
 	// Name filters products by name (partial match)
-	Name string
+	Name      string
+	NameExact string
 	// Prefetch specifies related objects to include in the response to reduce API calls
 	Prefetch string
 }
@@ -135,6 +136,9 @@ func (o *ProductsOptions) ToString() string {
 		}
 		if len(o.Name) > 0 {
 			opts = append(opts, fmt.Sprintf("name=%s", o.Name))
+		}
+		if len(o.NameExact) > 0 {
+			opts = append(opts, fmt.Sprintf("name_exact=%s", o.NameExact))
 		}
 		if len(o.Prefetch) > 0 {
 			opts = append(opts, fmt.Sprintf("prefetch=%s", o.Prefetch))
