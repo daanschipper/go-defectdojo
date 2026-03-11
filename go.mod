@@ -1,4 +1,4 @@
-module github.com/truemilk/go-defectdojo
+module github.com/daanschipper/go-defectdojo
 
 go 1.21
 
